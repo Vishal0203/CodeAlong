@@ -1,7 +1,7 @@
 import ListNode from '@nodes/ListNode';
 
 class LinkedList {
-  constructor(sequence) {
+  constructor(sequence = []) {
     this.head = this.tail = null;
 
     for (let val of sequence) {
