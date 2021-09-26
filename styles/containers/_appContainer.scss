@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+
+  .title {
+    width: 30rem;
+    color: white;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-image: url('./images/houses.png');
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 12rem;
+  }
+}

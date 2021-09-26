@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import './containers/appContainer';
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  width: inherit;
+  font-size: 10px;
+  font-family: Montserrat, sans-serif;
+  background-image: linear-gradient(to bottom right, blue, lightgreen);
+}
