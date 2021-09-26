@@ -20,13 +20,12 @@
 
   &::after {
     content: '';
+    background: url('./images/houses.png') repeat-x;
     background-size: contain;
-    background-repeat: repeat-x;
-    background-image: url('./images/houses.png');
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
+    width: 13350px;
     min-height: 12rem;
+    animation: marquee 60s infinite linear;
   }
 }
