@@ -10,12 +10,12 @@ class LinkedList {
   }
 
   append(value) {
-    const newNode = new ListNode(value);
+    const node = new ListNode(value);
     if (!this.head) {
-      this.head = this.tail = newNode;
+      this.head = this.tail = node;
     } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.tail.next = node;
+      this.tail = node;
     }
 
     return this;
