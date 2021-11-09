@@ -20,8 +20,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@nodes': path.resolve(__dirname, './src/utilities/nodes/'),
       '@ds': path.resolve(__dirname, './src/utilities/ds/'),
+      '@nodes': path.resolve(__dirname, './src/utilities/nodes/'),
+      '@polyfills': path.resolve(__dirname, './src/utilities/polyfills/'),
     },
   },
   module: {
