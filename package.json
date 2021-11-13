@@ -3,6 +3,6 @@
   "private": true,
   "workspaces": ["packages/*"],
   "scripts": {
-    "start": "lerna run --parallel start"
+    "start": "FORCE_COLOR=1 lerna run --parallel start"
   }
 }
