@@ -1,4 +1,4 @@
-import ListNode from '@nodes/ListNode';
+import ListNode from '../nodes/ListNode';
 
 class LinkedList {
   constructor(sequence = []) {

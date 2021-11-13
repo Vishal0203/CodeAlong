@@ -1,0 +1,46 @@
+{
+  "name": "@codealong/webapp",
+  "version": "1.0.0",
+  "description": "Web app for Code along sessions",
+  "keywords": [
+    "Code",
+    "along",
+    "with",
+    "Vishal"
+  ],
+  "author": "Vishal Sharma <vish.sharma0203@gmail.com>",
+  "homepage": "https://github.com/Vishal0203/CodeAlong#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishal0203/CodeAlong.git"
+  },
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "bugs": {
+    "url": "https://github.com/Vishal0203/CodeAlong/issues"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "css-loader": "^6.5.1",
+    "css-modules-typescript-loader": "^4.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.4",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.4",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "dependencies": {
+    "@codealong/utilities": "1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2"
+  }
+}

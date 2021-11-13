@@ -1,3 +1,5 @@
+@import "styles/animations/base";
+
 .container {
   position: relative;
   font-size: 2rem;
@@ -20,7 +22,7 @@
 
   &::after {
     content: '';
-    background: url('./images/houses.png') repeat-x;
+    background: url('./houses.png') repeat-x;
     background-size: contain;
     position: fixed;
     bottom: 0;

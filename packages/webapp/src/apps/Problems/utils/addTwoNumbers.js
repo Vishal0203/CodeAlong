@@ -1,4 +1,4 @@
-import LinkedList from '@ds/LinkedList';
+import { LinkedList } from '@codealong/utilities';
 
 const addTwoNumbers = (l1, l2) => {
   let result = new LinkedList();

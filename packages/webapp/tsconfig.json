@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "declarationDir": "typings",
+    "baseUrl": ".",
+    "paths": {
+      "@apps": ["src/apps"],
+      "@styles": ["styles"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
