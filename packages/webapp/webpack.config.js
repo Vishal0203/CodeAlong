@@ -4,11 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: './src/App.tsx',
   output: {
     path: path.resolve(__dirname, './dist/'),
   },
   devServer: {
+    historyApiFallback: true,
     client: {
       logging: 'error',
       progress: true,
@@ -21,8 +22,9 @@ module.exports = {
     alias: {
       '@apps': path.resolve(__dirname, 'src/apps'),
       '@styles': path.resolve(__dirname, 'styles'),
+      '@commons': path.resolve(__dirname, 'src/commons/'),
     },
-    extensions: ['.ts', '.js', '.scss'],
+    extensions: ['.tsx', '.ts', '.js', '.scss'],
   },
   module: {
     rules: [
@@ -43,7 +45,15 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-modules-typescript-loader',
-          { loader: 'css-loader', options: { modules: true } },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                exportLocalsConvention: 'camelCase',
+              },
+            },
+          },
           'sass-loader',
         ],
       },

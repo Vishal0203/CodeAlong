@@ -8,11 +8,11 @@
     "strict": true,
     "sourceMap": true,
     "target": "esnext",
-    "declarationDir": "typings",
     "baseUrl": ".",
     "paths": {
       "@apps": ["src/apps"],
-      "@styles": ["styles"]
+      "@styles": ["styles"],
+      "@commons/*": ["src/commons/*"],
     }
   },
   "exclude": [

@@ -1,0 +1,106 @@
+@import "styles/variables";
+
+$logo-width: 50px;
+
+.navbar {
+  &-container {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    inset: 0 0 auto 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(transparentize($color-black, .8), transparent);
+
+    &:hover {
+      .brand-name {
+        opacity: 1;
+        inset: 50% auto auto calc(#{$logo-width} + 1rem);
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &-logo {
+        width: $logo-width;
+        height: $logo-width;
+        position: relative;
+        display: inline-block;
+        background-color: $color-ripe-lemon;
+        z-index: 1;
+
+        &::after {
+          content: 'VS';
+          position: absolute;
+          bottom: 0.2rem;
+          right: 0.2rem;
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+
+      &-name {
+        color: $color-white;
+        opacity: 0;
+        position: absolute;
+        min-width: 14rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        inset: 50% auto auto 0;
+        transform: translateY(-50%);
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        transition: inset .5s, opacity .5s;
+      }
+    }
+  }
+
+  &-item {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    span {
+      display: inline-block;
+      position: relative;
+      color: transparentize($color-white, 0.5);
+      transition: color .2s;
+
+      &::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        inset: auto auto -.5rem 0;
+        background-color: $color-white;
+        transform: scale(0);
+        transition: transform 0.2s;
+      }
+    }
+
+    &:hover span {
+      color: $color-white;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    &.active span {
+      color: $color-white;
+    }
+  }
+
+  &-links {
+    list-style: none;
+    display: flex;
+  }
+}
