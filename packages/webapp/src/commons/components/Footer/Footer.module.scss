@@ -1,0 +1,12 @@
+@import "styles/animations/base";
+
+.footer {
+  content: '';
+  background: url('./houses.png') repeat-x;
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+  width: 13350px;
+  min-height: 12rem;
+  animation: marquee 60s infinite linear;
+}
