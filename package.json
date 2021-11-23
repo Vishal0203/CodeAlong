@@ -1,8 +1,15 @@
 {
   "name": "codealong",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "start": "FORCE_COLOR=1 lerna run --parallel start"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Vishal0203/CodeAlong.git",
+  "author": "Vishal Sharma <vish.sharma0203@gmail.com>",
+  "license": "MIT"
 }

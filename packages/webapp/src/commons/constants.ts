@@ -1,7 +1,11 @@
-import { NavItemProps } from '@commons/types';
+import { INavItem } from '@commons/types';
 import paths from '@commons/paths';
 
-export const NAV_ITEMS: NavItemProps[] = [
+export const NAV_ITEMS: INavItem[] = [
+  {
+    label: 'Playground',
+    link: paths.playground(),
+  },
   {
     label: 'Problems',
     link: paths.problems(),

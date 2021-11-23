@@ -1,6 +1,6 @@
-import { LinkedList } from '@codealong/utilities';
+import { LinkedList, ListNode } from '@codealong/utilities';
 
-const addTwoNumbers = (l1, l2) => {
+const addTwoNumbers = (l1: ListNode, l2: ListNode) => {
   let result = new LinkedList();
   let carry = 0;
 

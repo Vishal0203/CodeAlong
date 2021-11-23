@@ -1,0 +1,6 @@
+@import "styles/commons";
+
+.container {
+  @extend .container;
+  font-size: 2rem;
+}

@@ -1,8 +1,13 @@
-export type NavItemProps = {
+export interface INavItem {
   label: string;
   link: string;
-};
+}
 
-export type NavBarProps = {
-  options: NavItemProps[];
-};
+export interface INavBar {
+  options: INavItem[];
+}
+
+export interface IMemoizeAsync {
+  key: string;
+  url: string;
+}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import "variables";
 
 html {
   width: 100%;
@@ -12,5 +13,6 @@ body {
   width: inherit;
   font-size: 10px;
   font-family: Montserrat, sans-serif;
+  color: $color-white;
   background-image: linear-gradient(to bottom right, blue, lightgreen);
 }

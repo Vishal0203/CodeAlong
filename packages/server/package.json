@@ -1,0 +1,35 @@
+{
+  "name": "@codealong/server",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Vishal Sharma <vish.sharma0203@gmail.com>",
+  "homepage": "https://github.com/Vishal0203/CodeAlong#readme",
+  "license": "ISC",
+  "main": "src/server.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishal0203/CodeAlong.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "start": "nodemon --watch src src/server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Vishal0203/CodeAlong/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

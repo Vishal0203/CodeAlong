@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { IMemoizeAsync } from '@commons/types';
-import { generateHashKey, memoizeAsync } from '@codealong/utilities';
-import styles from './Problems.module.scss';
 
-const END_POINT = 'http://localhost:8000/greet/neeraj';
+import { generateHashKey, memoizeAsync } from '@codealong/utilities';
+import { IMemoizeAsync } from '@commons/types';
+import styles from './Playground.module.scss';
+
+const END_POINT = 'http://localhost:8000/greet/vishal';
 
 interface IMessage {
   message: string;
 }
 
-const Problems = () => {
+const Playground = () => {
   const [message, setMessage] = useState<IMessage>();
 
   useEffect(() => {
@@ -28,4 +29,4 @@ const Problems = () => {
   );
 };
 
-export default Problems;
+export default Playground;
