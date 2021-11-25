@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { generateHashKey, memoizeAsync } from '@codealong/utilities';
+import { generateHashKey } from '@codealong/utilities';
+import { memoizeAsync } from '@commons/utils';
 import { IMemoizeAsync } from '@commons/types';
 import styles from './Playground.module.scss';
 
@@ -17,6 +18,7 @@ const Playground = () => {
     const config: IMemoizeAsync = {
       url: END_POINT,
       key: generateHashKey(['GET', END_POINT]),
+      duration: 5000,
     };
 
     memoizeAsync(config, (data: IMessage) => setMessage(data));
