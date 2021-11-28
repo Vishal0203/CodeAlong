@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "FORCE_COLOR=1 lerna run --parallel start"
+    "start": "FORCE_COLOR=1 lerna run --parallel start",
+    "build": "lerna run build"
   },
   "version": "1.0.0",
   "main": "index.js",

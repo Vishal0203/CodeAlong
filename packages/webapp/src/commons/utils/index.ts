@@ -1,1 +1,1 @@
-export { default as memoizeAsync } from './memoize';
+export { memoize, memoizeAsync } from './memoize';

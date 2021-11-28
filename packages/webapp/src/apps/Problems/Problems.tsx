@@ -14,13 +14,21 @@ const Problems = () => {
   const [message, setMessage] = useState<IMessage>();
 
   useEffect(() => {
+    let _isMounted = true;
     const config: IMemoizeAsync = {
       url: END_POINT,
       key: generateHashKey(['GET', END_POINT]),
-      duration: 5000,
+      duration: 20000,
     };
 
-    memoizeAsync(config, (data: IMessage) => setMessage(data));
+    memoizeAsync(config, (data: IMessage) => {
+      if (_isMounted) {
+        setMessage(data);
+      }
+    });
+    return () => {
+      _isMounted = false;
+    };
   }, []);
 
   return (

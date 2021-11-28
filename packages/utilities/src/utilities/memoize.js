@@ -1,15 +1,15 @@
 import { generateHashKey } from '.';
 
-const memoize = (() => {
-  const memoMap = new Map();
+const memoize = () => {
+  const cache = {};
   return (fn, keys = []) => {
     const key = generateHashKey(keys);
-    if (key && !memoMap.has(key)) {
-      memoMap.set(key, fn());
+    if (key && !cache.hasOwnProperty(key)) {
+      cache[key] = fn.apply(this, keys);
     }
 
-    return memoMap.get(key);
+    return cache[key];
   };
-})();
+};
 
 export default memoize;
