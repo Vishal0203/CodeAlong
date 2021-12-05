@@ -2,20 +2,8 @@ const memoizeAsync = () => {
   const cache = {};
   const inProgressQueue = {};
 
-  setInterval(() => {
-    const currentTime = Date.now();
-    for (let key in cache) {
-      const { duration, insertedAt } = cache[key];
-      if (currentTime - insertedAt >= duration) {
-        console.info(`Cleared cache for [${key}]`);
-        delete cache[key];
-        delete inProgressQueue[key];
-      }
-    }
-  }, 2000);
-
   return (config, callback) => {
-    const { url, key, duration } = config;
+    const { url, key, duration = null } = config;
 
     if (cache.hasOwnProperty(key)) {
       console.log(`Reading from cache for key [${key}]`);
@@ -33,8 +21,18 @@ const memoizeAsync = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        cache[key] = { data, duration, insertedAt: Date.now() };
-        inProgressQueue[key].reduce((acc, cb) => cb(acc), cache[key].data);
+        cache[key] = { data, duration };
+        if (duration) {
+          setTimeout(() => {
+            console.info(`Cleared cache for [${key}]`);
+            delete cache[key];
+            delete inProgressQueue[key];
+          }, duration);
+        }
+
+        for (let cb of inProgressQueue[key]) {
+          cb(cache[key].data);
+        }
         // cleanup
         delete inProgressQueue[key];
       });

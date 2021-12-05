@@ -10,5 +10,5 @@ export interface INavBar {
 export interface IMemoizeAsync {
   key: string;
   url: string;
-  duration: number;
+  duration?: number;
 }
