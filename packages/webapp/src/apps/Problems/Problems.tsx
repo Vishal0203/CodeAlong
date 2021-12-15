@@ -22,10 +22,9 @@ const Problems = () => {
     };
 
     memoizeAsync(config, (data: IMessage) => {
-      if (_isMounted) {
-        setMessage(data);
-      }
+      _isMounted && setMessage(data);
     });
+
     return () => {
       _isMounted = false;
     };

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { generateHashKey } from '@codealong/utilities';
 import { memoizeAsync } from '@commons/utils';
 import { IMemoizeAsync } from '@commons/types';
@@ -12,10 +11,10 @@ interface IMessage {
 }
 
 const Playground = () => {
-  let _isMounted = true;
   const [message, setMessage] = useState<IMessage>();
 
   useEffect(() => {
+    let _isMounted = true;
     const config: IMemoizeAsync = {
       url: END_POINT,
       key: generateHashKey(['GET', END_POINT]),
@@ -23,10 +22,9 @@ const Playground = () => {
     };
 
     memoizeAsync(config, (data: IMessage) => {
-      if (_isMounted) {
-        setMessage(data);
-      }
+      _isMounted && setMessage(data);
     });
+
     return () => {
       _isMounted = false;
     };

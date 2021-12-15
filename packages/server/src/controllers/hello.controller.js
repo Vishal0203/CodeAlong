@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// request handlers
+// handlers
 const greet = (req, res) => {
   res.json({ message: 'Hello world' });
 };
