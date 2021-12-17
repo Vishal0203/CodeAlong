@@ -1,0 +1,12 @@
+@import "~@commons/styles/containers.module.scss";
+
+.greet {
+  @extend .paragraph;
+  font-size: 4rem;
+  margin-top: 0;
+}
+
+.project-list {
+  @extend .paragraph;
+  font-size: 2rem;
+}

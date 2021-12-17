@@ -1,0 +1,7 @@
+@import "~@commons/styles/containers.module.scss";
+
+.app-heading {
+  @extend .paragraph;
+  font-size: 4rem;
+  margin-top: 0;
+}

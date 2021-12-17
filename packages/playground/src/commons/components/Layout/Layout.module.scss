@@ -1,0 +1,56 @@
+@import "~@commons/styles/containers.module";
+
+.container {
+  @extend .container;
+
+  .page-heading {
+    font-size: 6rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 4rem 0;
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      display: inline-block;
+    }
+
+    .tagline {
+      color: #7c7c7c;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.bread-crumbs {
+  list-style: none;
+  padding-left: 0;
+  font-weight: 300;
+  font-size: 1.8rem;
+  display: flex;
+
+  li {
+    margin-right: 1rem;
+
+    &:after {
+      content: '/';
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      a {
+        color: #7c7c7c;
+      }
+
+      &:after {
+        content: '';
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
