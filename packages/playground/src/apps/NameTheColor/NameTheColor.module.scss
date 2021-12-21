@@ -5,3 +5,41 @@
   font-size: 4rem;
   margin-top: 0;
 }
+
+
+.app-container {
+  margin-top: 6rem;
+  display: flex;
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 35rem;
+    margin-right: 10rem;
+
+    .input-field {
+      padding: 1rem;
+      width: 100%;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #7c7c7c;
+    }
+  }
+
+  .color-container {
+    .color-name {
+      font-weight: 300;
+      font-size: 3rem;
+      margin: 1rem 0 0;
+    }
+
+    .background {
+      width: 25rem;
+      height: 10rem;
+      border: 1px solid black;
+      border-radius: 0.5rem;
+    }
+  }
+}
+

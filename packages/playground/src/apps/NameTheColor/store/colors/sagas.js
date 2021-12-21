@@ -1,13 +1,28 @@
-import { all, takeEvery } from 'redux-saga/effects';
-import { ACTIONS } from './dispatchers';
+import { all, takeEvery, put } from 'redux-saga/effects';
+import {
+  ACTIONS,
+  fetchColorByHexSuccess,
+  fetchColorByRgbSuccess,
+} from './dispatchers';
 
-function* fetchColorByHex() {
-  console.log('logging from saga');
-  yield 'todo: call by hex';
+function* fetchColorByHex({ hexCode }) {
+  try {
+    const response = yield fetch(`http://localhost:8080/colors/hex/${hexCode}`);
+    const data = yield response.json();
+    yield put(fetchColorByHexSuccess(data));
+  } catch (e) {
+    console.error(e);
+  }
 }
 
-function* fetchColorByRgb() {
-  yield 'todo: call by rgb';
+function* fetchColorByRgb({ rgbCode }) {
+  try {
+    const response = yield fetch(`http://localhost:8080/colors/rgb/${rgbCode}`);
+    const data = yield response.json();
+    yield put(fetchColorByRgbSuccess(data));
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function* watchFetchColorByHex() {

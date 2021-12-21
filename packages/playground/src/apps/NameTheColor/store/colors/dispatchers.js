@@ -10,7 +10,17 @@ export const fetchColorByHex = (hexCode) => ({
   hexCode,
 });
 
+export const fetchColorByHexSuccess = (colorData) => ({
+  type: ACTIONS.FETCH_COLOR_BY_HEX_SUCCESS,
+  colorData,
+});
+
 export const fetchColorByRgb = (rgbCode) => ({
   type: ACTIONS.FETCH_COLOR_BY_RGB,
   rgbCode,
+});
+
+export const fetchColorByRgbSuccess = (colorData) => ({
+  type: ACTIONS.FETCH_COLOR_BY_RGB_SUCCESS,
+  colorData,
 });
