@@ -1,26 +1,16 @@
 import React, { useEffect, useContext, useCallback, Fragment } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { debounce } from '@codealong/utilities';
 import paths from '@commons/paths';
+import { debounce } from '@codealong/utilities';
 import BreadcrumbContext from '@commons/contexts/BreadcrumbContext';
-import {
-  fetchColorByHex,
-  fetchColorByRgb,
-} from '@apps/NameTheColor/store/colors';
+import { fetchColorByHex, fetchColorByRgb } from './store/dispatchers';
 import styles from './NameTheColor.module.scss';
 
 const NameTheColor = () => {
-  const { rgb, name } = useSelector(({ ntc }) => {
-    const {
-      colors: { colorData },
-    } = ntc;
-    return colorData;
-  });
-
   const { setCrumbPaths } = useContext(BreadcrumbContext);
   const dispatch = useDispatch();
+  const { name, rgb } = useSelector(({ ntc }) => ntc.colorDetails);
 
   useEffect(() => {
     setCrumbPaths([
@@ -31,19 +21,17 @@ const NameTheColor = () => {
     return () => setCrumbPaths([]);
   }, []);
 
-  const handleHexChange = useCallback(
-    debounce(
-      ({ target: { value } }) => value && dispatch(fetchColorByHex(value)),
-      300
-    ),
+  const handleFetchByHex = useCallback(
+    debounce(({ target: { value } }) => {
+      dispatch(fetchColorByHex(value));
+    }, 500),
     [dispatch]
   );
 
-  const handleRgbChange = useCallback(
-    debounce(
-      ({ target: { value } }) => value && dispatch(fetchColorByRgb(value)),
-      300
-    ),
+  const handleFetchByRgb = useCallback(
+    debounce(({ target: { value } }) => {
+      dispatch(fetchColorByRgb(value));
+    }, 500),
     [dispatch]
   );
 
@@ -61,17 +49,17 @@ const NameTheColor = () => {
             type="text"
             className={styles.inputField}
             placeholder="Search hexcode"
-            onChange={handleHexChange}
+            onChange={handleFetchByHex}
           />
           <input
             type="text"
             className={styles.inputField}
             placeholder="Search RGB code"
-            onChange={handleRgbChange}
+            onChange={handleFetchByRgb}
           />
         </div>
         <div className={styles.colorContainer}>
-          {rgb && name && (
+          {name && rgb && (
             <Fragment>
               <div
                 className={styles.background}

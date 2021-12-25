@@ -1,8 +1,2 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import { all } from 'redux-saga/effects';
-import { colorSaga, colorReducer } from './colors';
-
-export const ntcReducers = combineReducers({ colors: colorReducer });
-export function* ntcSaga() {
-  yield all([colorSaga()]);
-}
+export { default as colorReducer } from './reducers';
+export { default as ntcSaga } from './sagas';
