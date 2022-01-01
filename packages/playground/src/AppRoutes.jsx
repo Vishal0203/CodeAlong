@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 
 import paths from '@commons/paths';
 import { Layout } from '@commons/components';
-import { Home, NameTheColor } from '@apps';
+import { HomeApp, NtcApp } from './SuspendedRoutes';
 
 const AppRoutes = () => (
   <Routes>
     <Route path={paths.home()} element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path={paths.ntc()} element={<NameTheColor />} />
+      <Route index element={HomeApp} />
+      <Route path={paths.ntc()} element={NtcApp} />
     </Route>
   </Routes>
 );
