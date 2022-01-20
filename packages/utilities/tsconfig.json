@@ -5,7 +5,9 @@
     "outDir": "dist",
     "allowJs": true,
     "declaration": true,
+    "declarationDir": "dist/types",
     "baseUrl": ".",
+    "moduleResolution": "Node",
     "paths": {
       "@ds": ["src/utilities/ds/"],
       "@nodes": ["src/utilities/nodes/"],

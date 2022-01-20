@@ -2,7 +2,11 @@
   "name": "@codealong/utilities",
   "version": "1.0.0",
   "description": "Repository to hold code along series codes",
-  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./polyfills/*": "./dist/utilities/polyfills/*.js"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./dist",

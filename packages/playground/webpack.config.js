@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -39,7 +37,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx$/,
-        use: 'babel-loader',
+        use: 'swc-loader',
       },
       {
         test: /\.css$/,
@@ -79,6 +77,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    new BundleAnalyzerPlugin(),
   ],
 };
