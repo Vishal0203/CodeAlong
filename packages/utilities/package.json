@@ -5,10 +5,11 @@
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./polyfills/*": "./dist/utilities/polyfills/*.js"
+    "./polyfills/*": "./dist/utilities/polyfills/*.js",
+    "./styles/*": "./dist/styles/*.scss"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc & rsync src/styles/* dist/styles/",
     "clean": "rm -rf ./dist",
     "prepare": "husky install",
     "postinstall": "yarn run build"

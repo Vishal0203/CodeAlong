@@ -8,6 +8,36 @@ class MyPromise {
   isResolved = false;
   isRejected = false;
 
+  static all(promises) {
+    const fulfilled = [];
+    const results = [];
+
+    return new MyPromise((resolve, reject) => {
+      promises.forEach((promise, index) => {
+        promise
+          .then((data) => {
+            fulfilled.push(true);
+            results[index] = data;
+
+            if (fulfilled.length === promises.length) {
+              resolve(results);
+            }
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    });
+  }
+
+  static resolve(value) {
+    return new MyPromise((resolve) => resolve(value));
+  }
+
+  static reject(value) {
+    return new MyPromise((_resolve, reject) => reject(value));
+  }
+
   constructor(executor) {
     const resolve = (value) => {
       this.resolvedData = value;

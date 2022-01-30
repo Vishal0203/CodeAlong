@@ -16,3 +16,11 @@ export const NtcApp = suspend({
       '@apps/NameTheColor'
     ),
 });
+
+export const ArrayPolyfills = suspend({
+  componentLoader: () =>
+    import(
+      /* webpackChunkName: 'arrays' */
+      '@apps/ArrayPolyfills'
+    ),
+});

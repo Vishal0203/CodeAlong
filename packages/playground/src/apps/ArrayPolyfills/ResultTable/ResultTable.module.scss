@@ -1,0 +1,12 @@
+.table {
+  margin: 4rem 0;
+  border-collapse: collapse;
+  font-size: 2rem;
+
+  th {
+    min-width: 20rem;
+    text-align: left;
+    font-weight: 500;
+    background-color: #f2f2f2;
+  }
+}
