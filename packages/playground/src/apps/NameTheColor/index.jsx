@@ -2,10 +2,23 @@ import React, { useEffect, useContext, useCallback, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import paths from '@commons/paths';
-import { debounce } from '@codealong/utilities';
+import { debounce, MyPromise } from '@codealong/utilities';
 import BreadcrumbContext from '@commons/contexts/BreadcrumbContext';
 import { fetchColorByHex, fetchColorByRgb } from './store/dispatchers';
 import styles from './NameTheColor.module.scss';
+
+new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 1000);
+})
+  .then((data) => {
+    console.log(data);
+    return data;
+  })
+  .then((data) => {
+    console.log(data);
+  });
 
 const NameTheColor = () => {
   const { setCrumbPaths } = useContext(BreadcrumbContext);

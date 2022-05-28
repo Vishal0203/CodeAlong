@@ -63,7 +63,10 @@ class MyPromise {
   then(fn) {
     this.resolveChain.push(fn);
     if (this.isResolved) {
-      this.resolveChain.reduce((acc, fn) => fn(acc), this.resolvedData);
+      this.resolveChain.reduce((acc, fn) => {
+        fn(acc);
+        this.resolveChain.pop();
+      }, this.resolvedData);
     }
 
     return this;
