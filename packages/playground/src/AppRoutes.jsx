@@ -3,7 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 
 import paths from '@commons/paths';
 import { Layout } from '@commons/components';
-import { HomeApp, NtcApp, ArrayPolyfills } from './SuspendedRoutes';
+import {
+  HomeApp,
+  NtcApp,
+  ArrayPolyfills,
+  DOMTraversal,
+} from './SuspendedRoutes';
 
 const AppRoutes = () => (
   <Routes>
@@ -11,6 +16,7 @@ const AppRoutes = () => (
       <Route index element={HomeApp} />
       <Route path={paths.ntc()} element={NtcApp} />
       <Route path={paths.arrays()} element={ArrayPolyfills} />
+      <Route path={paths.domTraversal()} element={DOMTraversal} />
     </Route>
   </Routes>
 );

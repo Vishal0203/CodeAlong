@@ -24,3 +24,11 @@ export const ArrayPolyfills = suspend({
       '@apps/ArrayPolyfills'
     ),
 });
+
+export const DOMTraversal = suspend({
+  componentLoader: () =>
+    import(
+      /* webpackChunkName: 'dom-traversal' */
+      '@apps/DOMTraversal'
+    ),
+});

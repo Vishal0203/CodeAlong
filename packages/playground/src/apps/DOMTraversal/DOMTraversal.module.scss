@@ -1,0 +1,23 @@
+@import "~@commons/styles/containers.module.scss";
+
+.tree {
+  &-container {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: space-evenly;
+    text-align: center;
+
+    .traversals {
+      @extend .paragraph;
+
+      table {
+        text-align: left;
+
+        th {
+          font-weight: 300;
+          background-color: #f2f2f2;
+        }
+      }
+    }
+  }
+}
