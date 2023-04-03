@@ -5,6 +5,7 @@ import { BinaryTree } from '@codealong/utilities';
 
 import ResultTable from '@apps/DOMTraversal/ResultTable';
 import { calculateTraversals } from '@apps/DOMTraversal/helpers';
+import TestDom from '@apps/DOMTraversal/TestDom';
 import styles from '@apps/DOMTraversal/DOMTraversal.module.scss';
 import treeSvg from './diagram/tree.svg';
 
@@ -33,6 +34,7 @@ const DOMTraversal = () => {
           <ResultTable results={results} />
         </div>
       </div>
+      <TestDom />
     </div>
   );
 };
